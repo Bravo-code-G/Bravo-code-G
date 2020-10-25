@@ -1,10 +1,10 @@
 body
 {
-    background-color: rgb(58, 56, 56);
-    color: rgb(14, 172, 235);
+    background-color: rgb(0, 0, 0);
+    color: rgb(144, 223, 255);
  text-align: center;
 font-family: cursive;
-font-size: 50px;
+font-size: 42px;
 margin: 0%;
 padding: 0%;
 
@@ -15,7 +15,7 @@ padding: 0%;
     
     
 
-    box box-shadow: 0px 2px 20px rgba(0,0,0,0.5);
+    box box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
     color: white;
     font-weight: bold;
     margin: 0;
@@ -32,10 +32,11 @@ padding: 0%;
 }
 #container
 {
+    background: url("https://content.halocdn.com/media/Default/games/halo-4/media/h4_002-f3df874bc11f452d91133674a13f033c.jpg") 0px 0px;
 width: 70%;
 padding: 1em;
 text-align: center;
-border: 50px solid #23617e;
+border: 5px solid #23617e;
 margin: auto;
 
 }
@@ -46,7 +47,7 @@ margin: auto;
     font-size: 40px;
 =======
     font-size: 20px;
-    background: url("https://content.halocdn.com/media/Default/Halo_Channel_Final/guide-thumbnail/games-h5-themmcpromo-542x305-39d82d7f1b814f45b633472cb388fbe1-fe30f7dbde784315ae83d1bae703d3c6_918-5f9d35c88de7452999ee65ae6d1f5f8c.jpg") 0px 0px;
+    
 >>>>>>> header
 =======
     font-size: 40px;
