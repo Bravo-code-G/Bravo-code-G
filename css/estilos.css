@@ -1,15 +1,19 @@
 body
 {
+    background-color: black;
     color: rgb(235, 47, 14);
  text-align: center;
 font-family: cursive;
 font-size: 50px;
 margin: 0%;
 padding: 0%;
+
 }
 #cabecera
 {
-    background: rgb(56, 56, 56);
+    
+    
+
     box box-shadow: 0px 2px 20px rgba(0,0,0,0.5);
     color: white;
     font-weight: bold;
@@ -36,7 +40,12 @@ margin: auto;
 }
 #container h1
 {
+<<<<<<< HEAD
     font-size: 40px;
+=======
+    font-size: 20px;
+    background: url("https://content.halocdn.com/media/Default/Halo_Channel_Final/guide-thumbnail/games-h5-themmcpromo-542x305-39d82d7f1b814f45b633472cb388fbe1-fe30f7dbde784315ae83d1bae703d3c6_918-5f9d35c88de7452999ee65ae6d1f5f8c.jpg") 0px 0px;
+>>>>>>> header
 }
 #post
 {
