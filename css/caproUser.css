@@ -1,0 +1,185 @@
+body{
+    background-color: rgb(19, 18, 18);
+}
+
+.boxprin{
+/* background-color:  rgb(19, 18, 18); */
+color: rgb(221, 221, 221);
+display: grid;
+grid-template: auto auto auto/ 1fr ;
+grid-template-areas: 
+"header"
+"body1"
+"footer";
+
+}
+
+.header{
+    background-image: url("https://images.pexels.com/photos/236709/pexels-photo-236709.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    background-color: rgb(92, 92, 92);
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    grid-area: header;
+    display: grid;
+    grid-template:1fr 1.5fr 3fr .5fr/1fr 3fr 2fr 2fr ;
+    grid-template-areas: 
+    "en1 en1 en1 en1"
+    "menuA menuA menuA menuA"
+    "userImg userInfo userInfo ."
+      ;
+}
+
+.en1{
+    grid-area: en1;
+    background-color: rgba(19, 18, 18, 0.678);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    "emp emp emp . usuario usuario"
+    ;
+}
+.emp{
+    grid-area: emp;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: left;
+    padding-left: 3%;
+    color: rgb(255, 246, 246);
+    
+}
+.empBoton{
+    /* background-color: rgba(19, 18, 18, 0); */
+    background: none;
+    width: 50%;
+    height: 100px;
+    color: white;
+    border: 0;
+    outline: none;
+    /* font: inherit; */
+    /* line-height: normal; */
+    /* overflow: visible; */
+    
+}
+.usuario{
+    grid-area: usuario;
+    align-self: center;
+    justify-self: right;
+    background-image: url("https://images.pexels.com/photos/5691647/pexels-photo-5691647.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover ;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    margin: 5%;
+    border-radius: 5px;
+    /* position: relative; */
+    text-decoration: none;
+    
+    
+}
+.caproUserPage{
+    /* background-color: rgba(0, 128, 0, 0.74); */
+    background: none;
+    width: 50px;
+    height: 50px;
+    /* margin: 5%; */
+    border-radius: 5px;
+}
+.usuarioul {
+    display: none;
+}
+.usuario:hover  .usuarioul, .usuarioul:hover{
+    display: block;
+}
+.usuarioul {
+    background-color: rgba(68, 68, 68, 0.945);
+    border-radius: 5px;
+    text-align: left ;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    color: white;
+    width: 100px;
+    height: 90px;
+    list-style: none;
+    margin: 7px 40px 0px 0px;
+    padding: 5px 0px 0px 0px;
+    position: relative;
+    right: 50px; top: -10px ;
+}
+
+
+.botonuser  {
+    width: 92%;
+    height: 20px;
+    background-color:  rgba(68, 68, 68, 0.945);
+    border-radius: 4px;
+    margin: 0px 0px 0px 3px;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+.botonuser:hover{
+    background-color:  rgba(99, 99, 99, 0.945);
+   
+}
+.menuA{
+    grid-area: menuA;
+    display: grid;
+    grid-template: auto;
+    grid-auto-flow: column;
+    justify-content: center;
+    
+    
+}
+.menuAboton{
+    color: rgb(239, 244, 247);
+    background-color:rgba(48, 47, 58, 0.945);
+    border-radius: 5px;
+}
+.userImg{
+    grid-area: userImg;
+    width: 104px;
+    height: 104px;
+    background-color: rgba(255, 251, 251, 0.432);
+    border-radius: 15px;
+    margin-left: 10px;
+    align-items: center;
+    
+}
+.userImgA{
+    background-image: url("https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover ;
+    object-fit: cover;
+    border-radius: 15px;
+    width: 100px;
+    height: 100px;
+    margin: 2px;
+}
+.userInfo{
+    grid-area: userInfo;
+    align-items: center;
+    background-color: rgba(19, 18, 18, 0.911);
+    color: rgb(255, 255, 255);
+    font-size: 130% ;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    /* margin-left: 3%; */
+    border-radius: 7px;
+    text-align: left;
+    padding-left: 5%;
+    
+}
+
+.body1{
+    
+    background-color: rgb(75, 60, 92);
+    grid-area: body1;
+}
+
+.footer{
+    
+    background-color: rgb(46, 57, 58);
+    grid-area: footer;
+}
