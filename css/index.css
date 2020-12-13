@@ -1,0 +1,33 @@
+body{
+    background:#eeedeebd;
+    overflow: hidden;
+    word-break: break-word;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.forma{
+    display:grid;
+    grid-template: repeat(auto) / repeat(auto);
+    grid-template-areas: 
+    "enc"
+    "box1";
+
+}
+.enc{
+    grid-area: enc;
+    background-color: rgba(6, 255, 139, 0.253);
+    width: 50%;
+    justify-self: center;
+    
+}
+
+.box1{
+    grid-area: box1;
+    justify-self: center;
+    background-color: rgba(36, 36, 36, 0.555);
+    border-radius: 2px;
+    width: 50%;
+    height: 50vh;
+}
