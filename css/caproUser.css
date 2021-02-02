@@ -45,10 +45,24 @@ overflow: hidden;
     
 }
 .menuAboton{
+    outline: none;
+    /* border: none; */
     color: rgb(239, 244, 247);
-    background-color:rgba(48, 47, 58, 0.945);
+    background-color: rgba(15, 15, 15, 0.842);
     border-radius: 5px;
-}
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    }
+    .menuAboton:hover {
+        transform: scale(1.1);
+        color: rgb(239, 244, 247);
+        background-color: rgba(15, 15, 15, 0.842);
+        border-color: #3498db;
+        border-radius: 5px;
+        border: .2% transparent #0099ff5e ;
+        
+    
+    }
 .en1{
     grid-area: en1;
     background-color: rgba(19, 18, 18, 0.678);
@@ -102,21 +116,22 @@ overflow: hidden;
     
 }
 .caproUserPage{
-    /* background-color: rgba(0, 128, 0, 0.74); */
+    /* background-color: rgba(41, 41, 41, 0.74); */
     background: none;
     width: 50px;
     height: 50px;
     /* margin: 5%; */
     border-radius: 5px;
+    margin-top: 4px;
 }
 .usuarioul {
     display: none;
 }
-.usuario:hover  .usuarioul, .usuarioul:hover{
+.usuario:hover .usuarioul, .usuarioul:hover{
     display: block;
 }
 .usuarioul {
-    background-color: rgba(68, 68, 68, 0.945);
+    background-color: #202b35c2;
     border-radius: 5px;
     text-align: left ;
     text-decoration: none;
@@ -136,16 +151,19 @@ overflow: hidden;
 .botonuser  {
     width: 92%;
     height: 20px;
-    background-color:  rgba(68, 68, 68, 0.945);
+    background-color:  #525252;
     border-radius: 4px;
     margin: 0px 0px 0px 3px;
     color: white;
     font-size: 10px;
     font-weight: bold;
+    outline: none;
+    transition: 500ms;
 }
 .botonuser:hover{
-    background-color:  rgba(99, 99, 99, 0.945);
-   
+    background-color:  rgb(173, 230, 238);
+   font-size: 11px;
+   color: black;
 }
 
 .userImg{
