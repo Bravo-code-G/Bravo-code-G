@@ -9,7 +9,7 @@ function aInicio(){
 }
 
 function tiempoEspera(){
-    location.href = "/inicio.html"
+    location.href = "../inicio.html"
     }
 
 
