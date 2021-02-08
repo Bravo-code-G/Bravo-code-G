@@ -9,7 +9,7 @@ function aInicio(){
 }
 
 function tiempoEspera(){
-    location.href = "/inicio.html"
+    location.href = "https://bravo-code-g.github.io/Inicio.html"
     }
 
 
