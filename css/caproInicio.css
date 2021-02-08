@@ -2,6 +2,7 @@ body{
     background-color: rgb(19, 18, 18);
     overflow: hidden;
     word-break: break-word;
+    background-color: rgb(41, 41, 41);
     
 }
 
@@ -21,7 +22,7 @@ overflow: hidden;
 .header{
     background-image: url("https://images.pexels.com/photos/236709/pexels-photo-236709.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-size: cover;
-    background-color: rgb(92, 92, 92);
+    background-color: rgb(34, 39, 39);
     font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
     color: white;

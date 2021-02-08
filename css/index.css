@@ -1,3 +1,4 @@
+
 body{
     background:#eeedeebd;
     overflow: hidden;
@@ -5,29 +6,98 @@ body{
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    
 }
 
-.forma{
-    display:grid;
+
+.video_background {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1000;
+    overflow: hidden;
+    }
+#imagenfondo {
+    /* opacity: 30%; */
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    /* margin-top: 8vw; */
+    /* margin-left: 15vh; */
+    background-image: url(/media/rediii.png);
+    transform: scale(.001);
+    /* border-radius: 20px; */
+}    
+
+#forma{
+    opacity: none;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: space-evenly;
     grid-template: repeat(auto) / repeat(auto);
+    transition: 1500ms;
     grid-template-areas: 
+    "."
     "enc"
-    "box1";
+    "box1"
+    "paginabraco";
 
 }
 .enc{
     grid-area: enc;
-    background-color: rgba(6, 255, 139, 0.253);
-    width: 50%;
+    background-color: rgba(6, 255, 139, 0.473);
+    width: 70%;
+    height: 50%;
     justify-self: center;
+    align-self: center;
+    padding: 4px;
+    color: rgb(227, 227, 228);
     
 }
 
 .box1{
     grid-area: box1;
     justify-self: center;
-    background-color: rgba(36, 36, 36, 0.555);
+    color: rgb(245, 241, 241);
+    background-color: rgba(19, 19, 19, 0.89);
     border-radius: 2px;
-    width: 50%;
-    height: 50vh;
+    width: 70%;
+    height: 45vh;
+}
+#paginabraco{
+    background-color: rgb(172, 170, 170);
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    transition:  700ms;
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+    outline: none;
+    text-overflow: clip; 
+    white-space: initial;
+    overflow: hidden;
+    text-decoration: none;
+    border: none;
+    margin-top: 25px;
+}
+#paginabraco:hover{
+    color: rgb(41, 41, 41);
+    background-color: rgb(8, 218, 255);
+    transform: scale(1.7);
+    border-radius:50%;
+    
 }
