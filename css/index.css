@@ -48,7 +48,7 @@ body{
     height: 100vh;
     display: grid;
     justify-content: space-evenly;
-    grid-template: repeat(auto) / repeat(auto);
+    grid-template: .5fr 1fr 1fr 1fr / auto;
     transition: 1500ms;
     grid-template-areas: 
     "."
@@ -60,23 +60,44 @@ body{
 .enc{
     grid-area: enc;
     background-color: rgba(6, 255, 139, 0.473);
-    width: 70%;
+    width: 73%;
     height: 50%;
     justify-self: center;
-    align-self: center;
-    padding: 4px;
+    text-align: center;
     color: rgb(227, 227, 228);
-    
+    border-radius: 5px;
+    margin-top: 8%;
 }
 
 .box1{
     grid-area: box1;
     justify-self: center;
     color: rgb(245, 241, 241);
-    background-color: rgba(19, 19, 19, 0.89);
-    border-radius: 2px;
-    width: 70%;
-    height: 45vh;
+    background-color: rgba(44, 44, 44, 0.89);
+    border-radius: 10px;
+    width: 66%;
+    height:1fr;
+    display: grid;
+    grid-template: 1fr;
+    place-items: center;
+    place-content: center;
+    margin-top: -6%;
+    display: grid;
+    grid-template: 1fr / 1fr ;
+    grid-template-areas: 
+    "box1a";
+}
+#box1a {
+    grid-area: box1a;
+    /* justify-self: center; */
+    color: rgb(245, 241, 241);
+    background-color: rgba(19, 19, 19, 0.678);
+    border-radius: 10px;
+    width: 95%;
+    height: 95%;
+}
+.boton1{
+background: chartreuse;
 }
 #paginabraco{
     background-color: rgb(172, 170, 170);
