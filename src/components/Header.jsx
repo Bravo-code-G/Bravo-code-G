@@ -13,7 +13,7 @@ const Header = () => (
                 <div className="usuario">
                     <div className="caproUserPage"></div>
                         <ul className="usuarioul">
-                            <li><a href="User.html"><button type="button" className="botonuser">Mi Perfil</button></a></li>
+                            <li><Link to="/User"><button type="button" className="botonuser">Mi Perfil</button></Link></li>
                             <li><a href="https://www.facebook.com" target="_blank"><button type="button" className="botonuser" >Mi facebook </button></a></li>
                             <li><a href="mailto:luisgarcia.mec@outlook.com"><button type="button" className="botonuser">Correo</button></a></li>
                             <li><a href="tel:8121576420"><button type="button" className="botonuser">Telefono</button></a></li>

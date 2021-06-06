@@ -1,0 +1,35 @@
+.userImg{
+    grid-area: userImg;
+    width: 104px;
+    height: 104px;
+    background-color: rgba(255, 251, 251, 0.432);
+    border-radius: 15px;
+    margin-left: 10px;
+    align-self: center ;
+    
+}
+.userImgA{
+    background-image: url("https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover ;
+    object-fit: cover;
+    border-radius: 15px;
+    width: 100px;
+    height: 100px;
+    margin: 2px;
+    align-self: center ;
+
+}
+.userInfo{
+    grid-area: userInfo;
+    align-self: center ;
+    background-color: rgba(19, 18, 18, 0.911);
+    color: rgb(255, 255, 255);
+    font-size: 130% ;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    /* margin-left: 3%; */
+    border-radius: 7px;
+    text-align: left;
+    padding-left: 5%;
+    
+}

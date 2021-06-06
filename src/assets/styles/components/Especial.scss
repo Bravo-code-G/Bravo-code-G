@@ -1,25 +1,25 @@
 
-body{
-    background:#eeedeebd;
-    overflow: hidden;
-    word-break: break-word;
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    width: 100vw;
-    height: 100vh;
-    margin: 0px;
+// body{
+//     background:#eeedeebd;
+//     // overflow: hidden;
+//     word-break: break-word;
+//     text-align: center;
+//     font-family: 'Courier New', Courier, monospace;
+//     font-weight: bold;
+//     display: grid;
+//     justify-content: center;
+//     align-content: center;
+//     width: 50%;
+//     height: 50%;
+//     margin: 0px;
     
-}
+// }
 
 
 .video_background {
     object-fit: cover;
-    width: 100vw;
-    height: 100vh;
+    width: 90%;
+    height: 90%;
     position: fixed;
     top: 0;
     left: 0;
@@ -35,11 +35,8 @@ body{
     width: 100vw;
     height: 100vh;
     position: fixed;
-    /* margin-top: 8vw; */
-    /* margin-left: 15vh; */
-    background-image: url(/media/rediii.png);
+    // background-image: url(/media/rediii.png../../static/rediii.png);
     transform: scale(.001);
-    /* border-radius: 20px; */
 }    
 
 #forma{
