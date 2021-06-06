@@ -1,3 +1,8 @@
 *.jpg
 
 public/subP
+src/assets
+src/js
+src/js2
+src/pre
+src/css2
