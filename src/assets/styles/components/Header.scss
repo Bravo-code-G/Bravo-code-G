@@ -1,0 +1,191 @@
+#header{
+    background-image: url("https://images.pexels.com/photos/236709/pexels-photo-236709.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    height: 400px;
+    background-color: rgb(34, 39, 39);
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    grid-area: header;
+    display: grid;
+    grid-template:1fr auto 4fr .5fr/1fr 3fr 2fr 2fr ;
+    /* grid-template:1fr 1.5fr 3fr .5fr/1fr 3fr 2fr 2fr ; */
+    /* grid-auto-flow: ; */
+    grid-template-areas: 
+    "en1 en1 en1 en1"
+    "menuA menuA menuA menuA "
+    ". . WB ."
+      ;
+}
+#WB{
+    outline: none;
+    grid-area: WB;
+    align-self: center;
+    justify-self: center;
+    width: 60px;
+    height: 45px;
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+#WBe{
+    overflow: hidden;
+    align-self: center;
+    justify-self: center;
+    font-size: 50px;
+    font-weight: bolder;
+    color: rgb(66, 87, 155);
+    width: 60px;
+    height: 45px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 1px black;
+    outline: none;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: #d8af3d8a;
+    transition-duration: 700ms;
+}
+#WBa{
+    text-decoration: none;
+}
+#WBe:hover{
+    background-color: #2191db8f;
+    color: #2c3131;
+    transform: scale(1.2)
+}
+.menuA{
+    grid-area: menuA;
+    display: flex;
+    flex-wrap: wrap;
+    /* display: grid;
+    grid-template: auto / repeat(auto);
+    grid-auto-flow: column dense; */
+    justify-content: center;
+    /* overflow: hidden; */
+    
+}
+
+.menuAboton{
+outline: none;
+/* border: none; */
+color: rgb(239, 244, 247);
+background-color: rgba(15, 15, 15, 0.842);
+border-radius: 5px;
+-webkit-transition: all 300ms ease-in-out;
+transition: all 300ms ease-in-out;
+}
+.menuAboton:hover {
+    transform: scale(1.1);
+    color: rgb(239, 244, 247);
+    background-color: rgba(15, 15, 15, 0.842);
+    border-color: #3498db;
+    border-radius: 5px;
+    border: .2% transparent #0099ff5e ;
+    
+
+}
+
+.en1{
+    grid-area: en1;
+    background-color: rgba(19, 18, 18, 0.678);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    "emp emp emp . usuario usuario"
+    ;
+    overflow: hidden; */
+}
+.emp{
+    grid-area: emp;
+    align-self: center;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: left;
+    padding-left: 3%;
+    color: rgb(255, 246, 246);
+    
+}
+.empBoton{
+    /* background-color: rgba(19, 18, 18, 0); */
+
+    background: none;
+    width: 100%;
+    height: 100px;
+    color: white;
+    border: 0;
+    outline: none;
+    /* font: inherit; */
+    /* line-height: normal; */
+    /* overflow: visible; */
+    
+}
+
+.usuario{
+    grid-area: usuario;
+    align-self: center;
+    justify-self: right;
+    background-image: url("https://images.pexels.com/photos/5691647/pexels-photo-5691647.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover ;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    margin: 2%;
+    border-radius: 5px;
+    /* position: relative; */
+    text-decoration: none;
+    
+}
+.caproUserPage{
+    /* background-color: rgba(0, 128, 0, 0.74); */
+    background: none;
+    width: 50px;
+    height: 50px;
+    /* margin: 5%; */
+    border-radius: 5px;
+    margin-top: 4px;
+}
+.usuarioul {
+    display: none;
+}
+.usuario:hover  .usuarioul, .usuarioul:hover{
+    display: block;
+}
+.usuarioul {
+    background-color: #202b35c2;
+    border-radius: 5px;
+    text-align: left ;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    color: white;
+    width: 100px;
+    height: 90px;
+    list-style: none;
+    margin: 7px 40px 0px 0px;
+    padding: 5px 0px 0px 0px;
+    position: relative;
+    right: 50px; top: -10px ;
+}
+
+
+.botonuser  {
+    width: 92%;
+    height: 20px;
+    background-color:  #525252;
+    border-radius: 4px;
+    margin: 0px 0px 0px 3px;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    outline: none;
+    transition: 500ms;
+}
+.botonuser:hover{
+    background-color:  rgb(173, 230, 238);
+   font-size: 11px;
+   color: black;
+}
