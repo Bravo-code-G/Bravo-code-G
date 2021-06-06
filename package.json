@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/Bravo-code-G/Bravo-code-G.github.io/issues"
   },
-  "homepage": "git@github.com:Bravo-code-G/Bravo-code-G.github.io.git",
+  "homepage": "https://github.com/Bravo-code-G/Bravo-code-G.github.io",
   "dependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
