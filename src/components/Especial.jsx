@@ -53,8 +53,7 @@ const Especial = () => {
     }
     return ( 
     <React.Fragment>
-    <div id="imagenfondo" >
-    </div>
+    <div id="container" >
     <div id="forma">
         <div className="enc">
             <h1>Proyecto Braco</h1>
@@ -75,6 +74,7 @@ const Especial = () => {
     <video muted autoPlay="autoPlay" loop="loop" className="video_background" preload="auto" volume="50">
     <source src={Tunel} type="video/mp4" />
 </video>
+    </div>
     </React.Fragment>
     )
 };

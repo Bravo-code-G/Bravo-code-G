@@ -1,17 +1,20 @@
 #carruselmaquinas{
     // grid-area: carruselmaquinas;
-    white-space: nowrap ;
-    display: inline-block;
+    // white-space: nowrap ;
+    // white-space:pre-wrap;
+    // display: inline-block;
     /* margin-left: 10px; */
     outline: none;
-    grid-auto-flow: column dense;
-    justify-content: center;
+    // grid-auto-flow: column dense;
+    // justify-content: center;
     /* scroll-behavior: smooth ; */
     /* overflow: auto; */
-    overflow-x: scroll;
+    // overflow-x: scroll;
     // scrollbar-color: red black ;
-    margin: auto 20px auto 20px;
-    overflow: hidden;
+    // margin: auto 20px auto 20px;
+    overflow: scroll;
+    position: relative;
+    width: 100%;
     
 }
 
@@ -32,7 +35,7 @@
 
 .carruselmaquinas_item{
     border-radius: 20px;
-    /* overflow: hidden; */
+    // overflow: hidden;
     margin-right: 10px;
     display: inline-block;
     cursor: pointer;
@@ -103,6 +106,6 @@
     display: inline-block;
 }
 
-::-webkit-scrollbar {
-    display: none;
-  }
+// ::-webkit-scrollbar {
+//     display: none;
+//   }

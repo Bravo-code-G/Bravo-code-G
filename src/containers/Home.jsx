@@ -4,14 +4,13 @@ import '../assets/styles/components/Home.scss'
 
 
 const Home = () => (
-    <div id="body1"> 
-            <div id="body2">
+    <div id="HomeP"> 
+            <div id="HomeS">
                 <h1>Pagina de prueba </h1>
                 <p>Pagina en desarrollo .</p>
-                
+                <p>texto solo de prueba </p>
+                <p>Bravo</p>
             </div>
-
-
         </div>
 );
 

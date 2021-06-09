@@ -11,18 +11,13 @@ const Footer = () => (
                     <div className="contactoo"><a href="tel:8121576420" className="contacto"><p>Telefono</p></a> <a href="mailto:8121576420"className="contacto"><p>Correo</p></a> </div>
             </div>
             <div id="cc">
-
             </div>
             <div id="dd">
-
             </div>
             <div id="ee">
-
             </div>
             <div id="ff">
-
             </div>
-            
         </div>
 );
 

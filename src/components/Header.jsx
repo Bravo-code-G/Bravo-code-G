@@ -21,7 +21,7 @@ const Header = () => (
                 </div>
             </div>
                 <div className="menuA">
-                    <div ><Link to='/'><button type="button" className="menuAboton" value="">Hitorial de fallas</button></Link></div>
+                    <div ><Link to='/Especial'><button type="button" className="menuAboton" value="">Hitorial de fallas</button></Link></div>
                     <div ><Link to='/'><button type="button" className="menuAboton" value="">Fallas actuales</button></Link></div>
                     <div ><Link to='/'><button type="button" className="menuAboton" value="">Preventivos</button></Link></div>
                     <div ><Link to='/'><button type="button" className="menuAboton" value="">Correctivos</button></Link></div>
