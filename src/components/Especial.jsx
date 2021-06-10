@@ -36,18 +36,18 @@ const Especial = () => {
     }
     function Cestilo(){
         let cambioDeEstilo = document.getElementById("paginabraco");
-        cambioDeEstilo.style.cssText = 'transform: translateX(130vw) translateY(-150vh);background-color:rgb(8, 218, 255);border-radius: 50%;transition-duration: 3s';
+        cambioDeEstilo.style.cssText = 'transform: translateX(130vw) translateY(-150vh);background-color:rgb(8, 218, 255);  z-index: -2;border-radius: 50%;transition-duration: 3s';
         let cambioBox1a = document.getElementById("box1a");
         cambioBox1a.style.cssText = "box-shadow: 0px 0px 6px 5px rgba(104, 104, 104, 0.493) ;"
         setTimeout(formaB,1000);
         function formaB(){
             let formaBB = document.getElementById("forma");
-            formaBB.style.cssText = " width:0px; height:0px; transform: translate(0px, 400px);"
-            setTimeout(fondoimagenA,1000)
-            function fondoimagenA(){
-                let fondoimagenAB = document.getElementById("imagenfondo");
-                fondoimagenAB.style.cssText = "transform: scale(.4);margin-top: 8vw; transition-duration:3s;"
-            }
+            formaBB.style.cssText = " width:0px; height:0px; transform: translate(0px, 1200px); z-index: -10;"
+            // setTimeout(fondoimagenA,1000)
+            // function fondoimagenA(){
+            //     let fondoimagenAB = document.getElementById("imagenfondo");
+            //     fondoimagenAB.style.cssText = "transform: scale(.4);margin-top: 8vw; transition-duration:3s;"
+            // }
         }
         
     }
@@ -71,8 +71,8 @@ const Especial = () => {
 </div>
     <div><button type="button" id="paginabraco" onClick={aInicio, Cestilo } onMouseMove={Cestilo2} onMouseOut={Cestilo3}>Ir a Proyecto</button></div>
     </div>
-    <video muted autoPlay="autoPlay" loop="loop" className="video_background" preload="auto" volume="50">
-    <source src={Tunel} type="video/mp4" />
+    <video width='100%' muted autoPlay="autoPlay" loop="loop" className="video_background" preload="auto" volume="50">
+    <source  controls src={Tunel} type="video/mp4" />
 </video>
     </div>
     </React.Fragment>

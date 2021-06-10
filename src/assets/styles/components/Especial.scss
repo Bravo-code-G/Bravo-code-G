@@ -8,15 +8,12 @@
 
 
 .video_background {
-    object-fit:cover;
+    grid-area: alfa;
+    object-fit: cover;
     width: 100vw;
     height: 100vh;
-    position: static;
-    margin-top: -500px;
     z-index: 1;
     overflow: hidden;
-    align-items: start;
-    // opacity: 5%;
 }
 // #imagenfondo {
     //     /* opacity: 30%; */
@@ -40,36 +37,40 @@
     font-weight: bold;
     display: grid;
     grid-template: 1fr /1fr;
-    justify-content: center;
-    align-content: center;
+    // justify-self: center;
+    // align-content: center;
     justify-items: center;
+    grid-template-areas:
+    "alfa";
 }
 #forma{
+    grid-area: alfa;
     opacity: none;
     width: 50%;
     height: 50%;
     display: grid;
     justify-content: space-evenly;
-    grid-template: .5fr 1fr 1fr 1fr / auto;
+    grid-template: auto / auto;
     transition: 1500ms;
     grid-template-areas: 
     "."
     "enc"
     "box1"
     "paginabraco";
-    z-index: 2;
+    z-index: 1000;
 
 }
 .enc{
     grid-area: enc;
     background-color: rgba(6, 255, 139, 0.473);
-    width: 73%;
-    height: 50%;
+    width: auto;
+    height: auto;
     justify-self: center;
     text-align: center;
     color: rgb(227, 227, 228);
     border-radius: 5px;
     margin-top: 8%;
+    padding: 2%;
 }
 
 .box1{
@@ -78,13 +79,13 @@
     color: rgb(245, 241, 241);
     background-color: rgba(44, 44, 44, 0.89);
     border-radius: 10px;
-    width: 66%;
-    height:1fr;
+    width: 90%;
+    height:110%;
     display: grid;
     grid-template: 1fr;
     place-items: center;
     place-content: center;
-    margin-top: -6%;
+    margin-top: 6%;
     display: grid;
     grid-template: 1fr / 1fr ;
     grid-template-areas: 
@@ -96,8 +97,8 @@
     color: rgb(245, 241, 241);
     background-color: rgba(19, 19, 19, 0.678);
     border-radius: 10px;
-    width: 95%;
-    height: 95%;
+    width: 96%;
+    height: 92%;
 }
 .boton1{
 background: chartreuse;
@@ -116,7 +117,7 @@ background: chartreuse;
     overflow: hidden;
     text-decoration: none;
     border: none;
-    margin-top: 25px;
+    margin-top: 20%;
 }
 #paginabraco:hover{
     color: rgb(41, 41, 41);
