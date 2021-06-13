@@ -11,6 +11,290 @@
 </head>
 <body>
     <div id='app'></div>  
+<style>
+   
+
+.loading{
+    width: 100vw;
+    height: 100vh;
+    margin: 0%;
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template: 1fr / 1fr;
+    grid-template-areas: 
+    "loaderP";
+    overflow: hidden;
+
+}
+.loader {
+    grid-area: loaderP;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(10, 186, 230);
+    /* border-top: 5px solid rgb(29, 215, 240); */
+    border-bottom: 5px solid rgb(14, 203, 228);
+    box-shadow: 0px 1px 15px rgb(88, 207, 207) ;
+    /* box-shadow: 0px 8px 100px wheat ; */
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 10;
+    overflow: hidden;
+    
+}
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+        
+    }
+}   
+
+.ghostLoader{
+    grid-area: loaderP;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* background-color: white; */
+    animation-name: girar;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 2;
+    display: grid;
+    grid-template: 200px / 200px;
+    grid-template-areas: "loadersG";
+    justify-items: center;
+    align-items: center;
+}        
+.loader2{
+    grid-area: loadersG;
+    width: 50px;
+    height: 50px;
+    z-index: -20;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(10, 186, 230);
+    /* border-top: 5px solid rgb(29, 215, 240); */
+    border-bottom: 1px solid rgb(14, 203, 228);
+    box-shadow: 0px 0px 50px rgb(63, 189, 189) ;
+    /* box-shadow: 0px 8px 100px wheat ; */
+    border-radius: 100%;
+    /* opacity: 90%; */
+    animation-name: girar2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* margin-top: 280px; */
+  }
+  .loader3{
+    grid-area: loadersG;
+    width: 50px;
+    height: 50px;
+    z-index: -20;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(10, 186, 230);
+    border-top: 1px solid rgb(14, 203, 228);
+    box-shadow: 0px 0px 50px rgb(63, 189, 189) ;
+    border-radius: 100%;
+    animation-name: girar3;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  .loader4{
+    grid-area: loadersG;
+    width: 50px;
+    height: 50px;
+    z-index: -20;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(10, 186, 230);
+    border-top: 1px solid rgb(14, 203, 228);
+    box-shadow: 0px 0px 50px rgb(63, 189, 189) ;
+    border-radius: 100%;
+    animation-name: girar4;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  .loader5{
+    grid-area: loadersG;
+    width: 50px;
+    height: 50px;
+    z-index: -20;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(10, 186, 230);
+    border-top: 1px solid rgb(14, 203, 228);
+    box-shadow: 0px 0px 50px rgb(63, 189, 189) ;
+    border-radius: 100%;
+    animation-name: girar5;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  .loader6{
+    grid-area: loadersG;
+    width: 50px;
+    height: 50px;
+    z-index: -20;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(10, 186, 230);
+    border-top: 1px solid rgb(14, 203, 228);
+    box-shadow: 0px 0px 50px rgb(63, 189, 189) ;
+    border-radius: 100%;
+    animation-name: girar6;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes girar5 {
+    from {
+      transform: rotate(0deg);
+      margin-left: 0px;
+      margin-bottom: 900px;
+      width: 50px;
+      height: 50px;
+    }
+    to {
+      transform: rotate(360deg);
+      margin-left: 0px;
+      margin-bottom: 0px;
+      width: 40px;
+      height: 40px;
+    }
+  }   
+  @keyframes girar6 {
+    from {
+      transform: rotate(0deg);
+      margin-left: 880px;
+      margin-bottom: 900px;
+      width: 50px;
+      height: 50px;
+    }
+    to {
+      transform: rotate(360deg);
+      margin-left: 0px;
+      margin-bottom: 0px;
+      width: 40px;
+      height: 40px;
+    }
+  }   
+
+@keyframes girar2 {
+  from {
+    transform: rotate(0deg);
+    margin-left: 880px;
+    width: 50px;
+    height: 50px;
+  }
+  to {
+    transform: rotate(360deg);
+    margin-left: 0px;
+    width: 40px;
+    height: 40px;
+  }
+}   
+@keyframes girar3 {
+    from {
+      transform: rotate(0deg);
+      margin-top: 880px;
+      width: 50px;
+      height: 50px;
+    }
+    to {
+      transform: rotate(360deg);
+      margin-top: 40px;
+      width: 40px;
+      height: 40px;
+    }
+  }  
+  @keyframes girar4 {
+    from {
+      transform: rotate(0deg);
+      margin-right: 880px;
+      margin-top: 900px;
+      width: 50px;
+      height: 50px;
+    }
+    to {
+      transform: rotate(360deg);
+      margin-bottom: 50px;
+      margin-top: 0px;
+      width: 40px;
+      height: 40px;
+    }
+  }             
+</style>
+
+<div class="loading ">
+    <div class="loader"></div>
+        <div class="ghostLoader">
+            <div class="loader2"></div>
+            <div class="loader3"></div>
+            <div class="loader4"></div>
+            <div class="loader5"></div>
+            <div class="loader6"></div>
+
+        </div>
+</div>
+
+<script>
+
+var Loading = (loadingDelayHidden = 0) => {
+let loading = null;
+const myLoadingDelayHidden = loadingDelayHidden;
+
+let imgs = [];
+let lenImgs = 0;
+let counterImgsLoading = 0;
+
+function incrementCounterImgs() {
+    counterImgsLoading += 1;
+    if (counterImgsLoading === lenImgs) hideLoading();
+}
+function hideLoading() {
+    if(loading !== null) {
+        loading.classList.remove('show');
+        setTimeout(function () {
+            loading.remove();
+        }, myLoadingDelayHidden);
+    }
+}
+
+function init() {
+    document.addEventListener('DOMContentLoaded', function () {
+        loading = document.querySelector('.loading');
+        imgs = Array.from(document.images);
+        lenImgs = imgs.length;
+        if(imgs.length === 0) {
+            hideLoading();
+        } else {
+            imgs.forEach(function (img) {
+                img.addEventListener('load', incrementCounterImgs, false);
+            });
+        }
+    });
+}
+
+return {
+    'init': init
+}
+}
+
+// Para usarlo se declara e inicia. El número es el tiempo transcurrido para borra el HTML una vez cargado todos los elementos, en este caso 1 segundo: 1000 milisegundos,
+Loading(1000).init();
+</script>
     <script  src = "http://localhost:35729/livereload.js" > </script>
 </body>
 </html>
