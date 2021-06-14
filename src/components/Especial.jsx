@@ -62,14 +62,14 @@ const Especial = () => {
 <div className="box1">
     <div id="box1a">
         <p>
-            Proyecto iniciado el 31 de enero de 2021
+            Proyecto de pruebas de Braco
         </p>
         <p>
             En construccion
         </p>
     </div> 
 </div>
-    <div><button type="button" id="paginabraco" onClick={aInicio, Cestilo } onMouseMove={Cestilo2} onMouseOut={Cestilo3}>Ir a Proyecto</button></div>
+    <div><button type="button" id="paginabraco" onClick={aInicio, Cestilo } onMouseMove={Cestilo2} onMouseOut={Cestilo3}>Boton SN</button></div>
     </div>
     <video width='100%' muted autoPlay="autoPlay" loop="loop" className="video_background" preload="auto" volume="50">
     <source  controls src={Tunel} type="video/mp4" />

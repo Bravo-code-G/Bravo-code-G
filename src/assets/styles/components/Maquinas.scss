@@ -1,66 +1,47 @@
 #carruselmaquinas{
-    // grid-area: carruselmaquinas;
-    // white-space: nowrap ;
-    // white-space:pre-wrap;
-    // display: inline-block;
-    /* margin-left: 10px; */
+    
+    display: flex;
+    flex-wrap: wrap;
     outline: none;
-    // grid-auto-flow: column dense;
-    // justify-content: center;
-    /* scroll-behavior: smooth ; */
-    /* overflow: auto; */
-    // overflow-x: scroll;
-    // scrollbar-color: red black ;
-    // margin: auto 20px auto 20px;
-    overflow: scroll;
-    position: relative;
-    width: 100%;
-    
-}
-
-.carruselmaquinas::-webkit-scrollbar{
-    background-color: rgba(252, 252, 252, 0.253);
-    border-radius: 10px;
-    height: 30px;
-    width: 5px;
-    
-}
-.carruselmaquinas::-webkit-scrollbar-thumb {
-    background-color: rgba(15, 15, 15, 0.726);
-    border-radius: 10px;
-    height: 10px;
-    
-    
+    margin: 35px;
+    // overflow: hidden;
+    box-sizing: border-box ;
+    // overflow: scroll;
+    width: auto;
+    height: auto;
+    gap: 10px;
 }
 
 .carruselmaquinas_item{
-    border-radius: 20px;
-    // overflow: hidden;
-    margin-right: 10px;
-    display: inline-block;
     cursor: pointer;
     transition: 450ms all;
     transform-origin: center left;
-    position: relative;
+    // position: relative;
+    display: grid;
+    place-content: center;
     outline: none;
     width: 200px;
     height: 250px;
-    margin: 15px 0px 20px 0px
+    border-radius: 10%;
+    padding: 10px;
+    // box-shadow: 0px 0px 5px rgb(207, 205, 205);
 
 }
-.carruselmaquinas_item:hover ~ .carruselmaquinas_item  {
-    transform: translate3d(20px, 0, 0);
-    
+
+.carruselmaquinas_item:hover .carruselmaquinas_item{
+    transform: translate3d(20px, 10px, 0);
+    margin: 0px;
+    padding: 0%;
     }
-    .carruselmaquinas:hover .carruselmaquinas_item {
-    
-        opacity: 0.7;
-    
+#carruselmaquinas:hover .carruselmaquinas_item {
+        opacity: 0.3;
+        z-index: 1;
     }
-    .carruselmaquinas:hover .carruselmaquinas_item:hover {
-    transform: scale(1.1);
-    opacity: 1;
-    
+#carruselmaquinas:hover .carruselmaquinas_item:hover {
+    transform: scale(1.15);
+    opacity: 100;
+    z-index: 5;
+    box-shadow: 0px 0px 5px rgb(12, 240, 183);
     }
 .carruselmaquinas_boton{
     background: none;
@@ -68,7 +49,7 @@
     object-fit: cover;
     width: 200px;
     height: 250px;
-    border-radius: 20px;
+    border-radius: 10%;
     outline: none;
     display: grid;
     grid-template: auto;
@@ -97,8 +78,10 @@
    
 }
 .carrusel_cortadora{
+    background-color: rgb(43, 42, 42);
     background-image: url("https://images.pexels.com/photos/50691/drill-milling-milling-machine-drilling-50691.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-    background-size: cover;
+    background-size:contain;
+    background-repeat: no-repeat;
     object-fit: cover;
     width: 200px;
     height: 250px;
