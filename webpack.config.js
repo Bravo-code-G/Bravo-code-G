@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const path = require('path');
 
+
 module.exports = {
   entry: './src/index.js',
   output: {
