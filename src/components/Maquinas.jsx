@@ -1,17 +1,19 @@
 import React from 'react';
+import Description from './Description.jsx';
 import '../assets/styles/components/Maquinas.scss';
 
 const Maquinas = () => (
 <div id="carruselmaquinas">
 <div className="carruselmaquinas_item">
-    <div  >
+    
         <a href="#" className="carrusel_soldadora" >
             <button type="button" className="carruselmaquinas_boton"> 
-            <h4 className="maquinas_boton_font">Motor</h4>
+            <h4 className="maquinas_boton_font">Engine</h4>
             </button>
-    </a>
-    </div>
+        </a>
+        <Description/>
 </div>
+        
 <div className="carruselmaquinas_item">
     <div >
         <a href="#" className="carrusel_cortadora">

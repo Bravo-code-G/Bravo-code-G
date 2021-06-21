@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 
@@ -68,6 +69,7 @@ module.exports = {
       filename: 'assets/[name].css',
     }),
     new LiveReloadPlugin(),
+    new Dotenv(),
   ],
 
 };

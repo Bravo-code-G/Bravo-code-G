@@ -12,5 +12,42 @@
         "destination": "/index.html"
       }
     ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true,
+      "port": 5002
+    },
+    "database": {
+      "port": 9001,
+      "rules": "database.rules.json"
+    },
+    "auth": {
+      "port": 9099
+    },
+    "firestore": {
+      "port": 8085,
+      "rules": "firestore.rules"
+    },
+    "storage": {
+      "port": 9199,
+      "rules": "storage.rules"
+    },
+    "functions": {
+      "port": 5001
+    }
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "database": {
+    "rules": "database.rules.json"
   }
 }
