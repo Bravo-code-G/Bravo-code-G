@@ -1,18 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
-import 'firebase/app';
-firebase.initializeApp({
-  apiKey: "AIzaSyAKDUovEMCj_2yDeWnlcam0rxnD4zMopvs",
-  authDomain: "bravo-react-0.firebaseapp.com",
-  projectId: "bravo-react-0",
-  storageBucket: "bravo-react-0.appspot.com",
-  messagingSenderId: "400531528348",
-  appId: "1:400531528348:web:0901490a4666e49f1feb59",
-  measurementId: "G-W196JE55ZJ"
-});
-const databasee = firebase.database();
-
-
+// import 'firebase/app';
 
 class Descriptionn extends Component {
 
@@ -65,13 +53,13 @@ class Descriptionn extends Component {
 
     return(
       <div className="card">
-        <div class="card-body">
+        <div className="card-body">
           <ul className="list-group">
             {currentMessages} 
           </ul>
         </div>
 
-        <div class="card-footer">
+        <div className="card-footer">
           <input 
             type="text" 
             placeholder="Type your Message"
