@@ -1,78 +1,56 @@
+import React from 'react';
 
-class Autenticacion {
-  autEmailPass (email, password) {
-    firebase.auth().signInWithEmailAndPassword(email, password).then(result => {
-      if (result.user.emailVerified) {
-        $('#avatar').attr('src', 'imagenes/usuario_auth.png')
-        Materialize.toast(`Bienvenido ${result.user.displayName}`, 5000)
-      } else {
-        firebase.auth().signOut()
-        Materialize.toast(
-          `Por favor realiza la verificación de la cuenta`,
-          5000
-        )
-      }
-    })
+React.useEffect(() => {
+document.addEventListener('DOMContentLoaded', (event) => {
+  googleSignInRedirectResult()
+    authStateListener()
+    console.log("activo")
+  });
+}, []);
 
-    $('.modal').modal('close')
-  }
-
-  crearCuentaEmailPass (email, password, nombres) {
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(result => {
-        result.user.updateProfile({
-          displayName: nombres
-        })
-
-        const configuracion = {
-          url: 'http://localhost:3000/'
-        }
-
-        result.user.sendEmailVerification(configuracion).catch(error => {
-          console.error(error)
-          Materialize.toast(error.message, 4000)
-        })
-
-        firebase.auth().signOut()
-
-        Materialize.toast(
-          `Bienvenido ${nombres}, debes realizar el proceso de verificación`,
-          4000
-        )
-
-        $('.modal').modal('close')
-      })
-      .catch(error => {
-        console.error(error)
-        Materialize.toast(error.message, 4000)
-      })
-  }
-
-  authCuentaGoogle () {
-    const provider = new firebase.auth.GoogleAuthProvider()
-
-    firebase.auth().signInWithPopup(provider).then(result => {
-      $('#avatar').attr('src', result.user.photoURL)
-      $('.modal').modal('close')
-      Materialize.toast(`Bienvenido ${result.user.displayName} !! `, 4000)
-    })
-    .catch(error =>{
-      console.error(error)
-      Materialize.toast(`Error al autenticarse con google: ${error} `, 4000)
-    })
-  }
-
-  authCuentaFacebook () {
-    // $('#avatar').attr('src', result.user.photoURL)
-    // $('.modal').modal('close')
-    // Materialize.toast(`Bienvenido ${result.user.displayName} !! `, 4000)
-  }
-
-  authTwitter () {
-    // TODO: Crear auth con twitter
-  }
+const authStateListener = () => {
+  // [START auth_state_listener]
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      var uid = user.uid;
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+  // [END auth_state_listener]
 }
 
-export default googleProvider;
+function googleSignInRedirectResult() {
+  // [START auth_google_signin_redirect_result]
+  firebase.auth()
+    .getRedirectResult()
+    .then((result) => {
+      if (result.credential) {
+        /** @type {firebase.auth.OAuthCredential} */
+        var credential = result.credential;
+
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = credential.accessToken;
+        // ...
+      }
+      // The signed-in user info.
+      var user = result.user;
+    }).catch((error) => {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    })
+  };
+
+
+
+  export default AuthLo;

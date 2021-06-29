@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import firebase from "firebase/app";
+import "firebase/auth";
 import '../assets/styles/components/Header.scss';
 import Auth from './Auth.jsx';
-import { AbrirModal } from '../assets/styles/components/Header';
-import { CerrarModal } from '../assets/styles/components/Header';
-
+import { AbrirModal, CerrarModal, signOut} from './Header';
+import {authStateListener, UsuarioP} from '../routes/App';
 
 // const AbrirModal = () => {
 //     const modalIniciar = document.getElementById('modalIniciar');
@@ -31,6 +32,7 @@ const Header = () => (
                             <li><a href="mailto:luisgarcia.mec@outlook.com"><button type="button" className="botonuser">Correo</button></a></li>
                             <li><a href="tel:8121576420"><button type="button" className="botonuser">Telefono</button></a></li>
                             <li> <button id='IniciarSesion' data-open='modalIniciar'className="botonuser" onClick={AbrirModal}>Iniciar Sesion</button> </li>
+                            <li><button onClick={signOut}>Cerrar sesión</button></li>
                         </ul>
                 </div>
                 <div id='modalIniciar'> <div id='pantallaPosterior' onClick={CerrarModal}></div>  <Auth /></div>
@@ -43,7 +45,8 @@ const Header = () => (
                     <div ><Link to="/Maquinas"><button type="button" className="menuAboton" value="">Maquinas</button></Link></div>
                     <div ><Link to='/'><button type="button"  className="menuAboton" value="">Piezas</button></Link></div>
                 </div>
-                    <div id="WB"><a href="WBindex.html" id="WBa"><button id="WBe">WB</button></a></div>
+                    <div id="WB"><a  id="WBa"><button id="WBe" onClick={authStateListener}>WB</button></a></div>
+                    <div id="WBc"><a  id="WBac"><button id="WBec" onClick={UsuarioP}>WB2</button></a></div>
         </div>
 );
 

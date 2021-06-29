@@ -4,7 +4,7 @@ import '../assets/styles/components/Auth.scss';
 import firebase from "firebase/app";
 import "firebase/auth";
 import IconGoogle from '../assets/static/IconGoogle.png';
-import { CerrarModal } from '../assets/styles/components/Header';
+import { CerrarModal } from './Header';
 
 
 // Docs: https://source.corp.google.com/piper///depot/google3/third_party/devsite/firebase/en/docs/auth/web/google-signin.md
