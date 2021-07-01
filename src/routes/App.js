@@ -12,7 +12,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/database';
-import Auth from '../components/Auth.jsx'
+import Auth from '../components/Auth.jsx';
 
 firebase.initializeApp({
     apiKey: "AIzaSyAKDUovEMCj_2yDeWnlcam0rxnD4zMopvs",
