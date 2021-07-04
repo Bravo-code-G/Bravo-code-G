@@ -5,17 +5,7 @@ import "firebase/auth";
 import '../assets/styles/components/Header.scss';
 import Auth from './Auth.jsx';
 import { AbrirModal, CerrarModal, signOut} from './Header';
-import {authStateListener, UsuarioP} from '../routes/App';
-import { authStateListenerAcceso } from './acceso';
-
-// const AbrirModal = () => {
-//     const modalIniciar = document.getElementById('modalIniciar');
-//     modalIniciar.style.cssText = 'visibility: visible; opacity: 100%;transition-duration2s;'
-// }
-// const CerrarModal = () => {
-//     const modalIniciar = document.getElementById('modalIniciar');
-//     modalIniciar.style.cssText = 'visibility: hidden; opacity: 0%;transition-duration2s;'
-// }
+import {authStateListener, UsuarioP} from './AuthMethods';
 
 const Header = () => (
     <div id="header" >
@@ -48,7 +38,7 @@ const Header = () => (
                 </div>
                     <div id="WB"><a  id="WBa"><button id="WBe" onClick={authStateListener}>WB</button></a></div>
                     <div id="WBc"><a  id="WBac"><button id="WBec" onClick={UsuarioP}>WB2</button></a></div>
-                    <div id="WBf"><a  id="WBacf"><button id="WBecf" onClick={authStateListenerAcceso}>WB3</button></a></div>
+                    <div id="WBf"><a  id="WBacf"><button id="WBecf" >WB3</button></a></div>
 
         </div>
 );
