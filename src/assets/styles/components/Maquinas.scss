@@ -24,8 +24,8 @@
     height: 250px;
     border-radius: 10%;
     padding: 10px;
-    // box-shadow: 0px 0px 5px rgb(207, 205, 205);
-
+    grid-template: 1fr/ 1fr;
+    grid-template-areas: "MaQ";
 }
 
 .carruselmaquinas_item:hover .carruselmaquinas_item{
@@ -46,49 +46,48 @@
 .carruselmaquinas_boton{
     background: none;
     background-size: cover ;
-    object-fit: cover;
+    // object-fit: cover;
     width: 200px;
     height: 250px;
     border-radius: 10%;
-    outline: none;
+    // outline: none;
     display: grid;
     grid-template: auto;
     align-items: end ;
     justify-items: center;
-    text-decoration: none;
-    
+    // text-decoration: none;
+    border: none;
 }
 .maquinas_boton_font{
-    background-color: rgba(224, 224, 224, 0.562);
+    background-color: rgba(24, 24, 24, 0.801);
     text-decoration: none;
     outline: none;
     border-radius: 10px;
     width: 70%;
-    color: rgb(5, 5, 5);
+    color: rgb(255, 255, 255);
     font-size: 20px;
+    border: 1px solid rgb(206, 206, 206);
 }
-.carrusel_soldadora{
-    background-image: url("https://images.pexels.com/photos/190574/pexels-photo-190574.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+.carruselmaquinas_Link{
+    grid-area: MaQ;
+    outline: none;
+    text-decoration: none;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 2;
+}
+.ImgM{
+    grid-area: MaQ;
+    opacity: 80%;
     background-size: cover;
     object-fit: cover;
     width: 200px;
     height: 250px;
     border-radius: 20px;
-    display: inline-block;
-   
+    z-index: 1;
 }
-.carrusel_cortadora{
-    background-color: rgb(43, 42, 42);
-    background-image: url("https://images.pexels.com/photos/50691/drill-milling-milling-machine-drilling-50691.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-    background-size:contain;
-    background-repeat: no-repeat;
-    object-fit: cover;
-    width: 200px;
-    height: 250px;
-    border-radius: 20px;
-    display: inline-block;
-}
-
 // ::-webkit-scrollbar {
 //     display: none;
 //   }

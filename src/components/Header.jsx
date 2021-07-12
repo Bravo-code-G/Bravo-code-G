@@ -33,7 +33,7 @@ const Header = () => (
                     <div ><Link to='/'><button type="button" className="menuAboton" value="">Fallas actuales</button></Link></div>
                     <div ><Link to='/'><button type="button" className="menuAboton" value="">Preventivos</button></Link></div>
                     <div ><Link to='/'><button type="button" className="menuAboton" value="">Correctivos</button></Link></div>
-                    <div ><Link to="/Maquinas"><button type="button" className="menuAboton" value="">Maquinas</button></Link></div>
+                    <div ><Link to="/MaquinasCarrusel"><button type="button" className="menuAboton" value="">Maquinas</button></Link></div>
                     <div ><Link to='/'><button type="button"  className="menuAboton" value="">Piezas</button></Link></div>
                 </div>
                     <div id="WB"><a  id="WBa"><button id="WBe" onClick={authStateListener}>WB</button></a></div>

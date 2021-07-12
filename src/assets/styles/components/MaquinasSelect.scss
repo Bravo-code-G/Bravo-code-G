@@ -1,0 +1,114 @@
+
+#Box{
+    background-color: #242421;
+    height: auto;
+    display: grid;
+    grid-template: 1fr / 1fr;
+    grid-template-areas: "BoxA";
+    overflow:hidden;
+    word-break: break-word;
+
+
+}
+#BackImg{
+    grid-area: BoxA;
+    // background-image: url('https://images.pexels.com/photos/236709/pexels-photo-236709.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background: linear-gradient(70deg, rgb(32, 82, 102), rgb(2, 2, 2), rgb(61, 23, 23));
+    background-attachment: fixed;
+    // background-size: cover ;
+    // object-fit: cover;
+    opacity: 80%;
+    z-index: 1;
+    // height: 1000px;
+
+}
+
+#BoxP{
+    grid-area: BoxA;
+    background: none;
+    // min-height: 300px;
+    height: auto;
+    display: grid;
+    grid-template: auto / auto;
+    overflow: hidden;
+    z-index: 2;
+}
+#BoxPa{
+    height: fit-content;
+    display: grid;
+    grid-template: auto / auto;
+    grid-template-areas: 
+    "ImagenMa";
+    justify-content: center;
+}
+
+#ImagenMa{
+    grid-area: ImagenMa;
+    background-image: url('https://images.pexels.com/photos/159275/macro-focus-cogwheel-gear-159275.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-size: cover ;
+    object-fit: cover;
+    opacity: 70%;
+    // border: 2px solid rgb(41, 86, 138);
+    box-shadow: 0px 0px 7px rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 340px;
+    height: 340px;
+    margin: 15px;
+    z-index: 1;
+}
+
+#InfoE{
+    background-color: rgba(0, 0, 0, 0.836);
+    grid-area: ImagenMa;
+    align-self: flex-end;
+    justify-self: flex-end;
+    border-radius: 10px;
+    width: 200px;
+    margin: 15px;
+    padding: 0px 5px 0px 10px ;
+    z-index: 2;
+}
+#InfoEa{
+    margin: 10px;
+}
+
+#BoxPb{
+    // height: 500px;
+    height: auto;
+    margin: 20px;
+    display: grid;
+    grid-template: auto / 1fr;
+}
+
+.BoxPba{
+    height:auto;
+}
+.BotonAccion{
+    overflow: hidden;
+    background-color: rgba(244, 252, 243, 0.945);
+    outline: none;
+    border: 2px solid rgba(2, 154, 255, 0);
+    box-shadow: 0px 0px 5px rgb(2, 154, 255);
+    border-radius: 5px;
+    margin: 5px;
+    min-width: 250px;
+    max-width: 85vw;
+}
+.BotonAccion:hover{
+    box-shadow: 0px 0px 10px rgb(2, 154, 255);
+    border: 2px solid rgba(2, 154, 255, 0.884);
+
+}
+
+
+.Listado{
+    background-color: rgb(31, 31, 31);
+    font-family: Arial, Helvetica, sans-serif;
+    visibility:hidden;
+    display: none;
+    border: 3px solid rgb(82, 83, 95);
+    padding: 20px 40px 20px 40px;
+    margin: 0px;
+    border-radius: 8px;
+    overflow: hidden;
+}

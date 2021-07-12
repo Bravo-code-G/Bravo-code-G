@@ -1,5 +1,4 @@
 import React from 'react';
-// import  googleProvider  from './AuthLo.js';
 import '../assets/styles/components/Auth.scss';
 import firebase from "firebase/app";
 import "firebase/auth";
