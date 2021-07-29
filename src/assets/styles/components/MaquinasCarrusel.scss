@@ -1,0 +1,82 @@
+
+
+#carruselmaquinasA{
+    overflow: hidden;
+    display: grid;
+    grid-template: auto auto / 1fr;
+    grid-template-areas: 
+    "modalNewElement"
+    "carruselMaquinasFire";
+    outline: none;
+    margin: 20px;
+    box-sizing: border-box ;
+    width: auto;
+    height: auto;
+    gap: 10px;
+}
+
+#modalNewElement{
+    grid-area: modalNewElement;
+    width: 0vw;
+    height: 0vh;
+    // overflow-y: scroll;
+    visibility: hidden;
+    // position: absolute;
+    display: grid;
+    grid-template: auto /auto;
+    grid-template-areas: 
+    "pantallaAddElement";
+    gap: 4px;
+    place-items: center;
+    place-content: center;
+    background-color: none;
+    transition-duration: .5s;
+    z-index: 200;
+    transform: translateY(-1000px);
+    margin: 10px 0px 10px 0px;
+}
+
+#HeaderNewElement{
+    grid-area: pantallaAddElement;
+}
+
+#pantallaPosteriorElement{
+    grid-area: pantallaAddElement;
+    width: 100vw;
+    height: 120vh;
+    background-color: none;
+}
+
+#carruselMaquinasFire{
+    grid-area: carruselMaquinasFire;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    outline: none;
+    margin: 20px;
+    padding: 30px;
+    box-sizing: border-box ;
+    width: auto;
+    height: auto;
+    gap: 10px;
+}
+
+#NuevoelementFire{
+    position: fixed;
+    background-color: rgb(199, 220, 223);
+    width: 90px;
+    height: 90px;
+    right: 5px;
+    outline: none;
+    border-radius: 100%;
+    border: none;
+    border-bottom: 3px solid rgb(6, 204, 253);
+    // border-left: 3px solid rgb(6, 204, 253) ;
+    z-index: 800;
+    transition-duration: 1s;
+}
+#NuevoelementFire:hover{
+    transform: scale(1.1);
+    // box-shadow: 1px 1px 8px rgb(0, 255, 234);
+    border: 3px solid rgb(6, 204, 253);
+}

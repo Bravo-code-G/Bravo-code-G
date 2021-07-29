@@ -1,0 +1,111 @@
+
+#HeaderNewElement{
+    // grid-area: pantallaa;
+    overflow: hidden;
+    padding: 20px;
+    min-height: 300px;
+    min-width: 300px;
+    height: auto;
+    width:auto;
+    background-color: rgba(0, 0, 0, 0.856);
+    border-radius: 7px;
+    border: 1px solid rgb(19, 208, 255);
+    display: grid;
+    grid-template:  1fr / 1fr;
+    grid-template-areas: 
+    "EncNewElementt";
+    align-items: center;
+    justify-items: center;
+    margin: 15px auto 15px auto;
+    place-self: center;
+    transform: scale(.9);
+}
+// #First{
+//     overflow: hidden;
+//     padding: 20px;
+//     min-height: 300px;
+//     min-width: 365px;
+//     height: auto;
+//     width:365px;
+//     background-color: rgba(0, 0, 0, 0.856);
+//     border-radius: 7px;
+//     border: 1px solid rgb(19, 208, 255);
+//     display: grid;
+//     align-items: center;
+//     justify-items: center;
+//     margin: auto;
+//     place-self: center;
+// }
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap);
+
+#EncNewElement{
+    grid-area: EncNewElementt;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+#Enc{
+    font-size:17px ;
+    color: rgba(255, 255, 255, 0.979);
+    background-color: rgb(37, 37, 37);
+    border-radius: 5px;
+    text-align: center;
+}
+
+#datoImportante{
+    color: rgba(255, 1, 1, 0.534);
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    margin: 0px;
+    padding: 2px;
+}
+#formNewElement {
+    display: grid;
+    gap: 5px;
+    background-color: rgb(58, 58, 58);
+    padding: 20px;
+    width:fit-content;
+    max-width: 350px;
+    min-width: 300px;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(211, 209, 209, 0.979);
+    border: 2px solid  rgb(223, 223, 223);
+    border-radius: 10px;
+}
+
+#addNewFire{
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(17, 17, 17, 0.979);
+    width:fit-content;
+    padding: 3px 8px 3px 8px;
+    border-radius: 10px;
+    border: 1px solid  rgb(255, 255, 255);
+    transition: 400ms;
+    justify-self: center;
+    font-size: 20px;
+}
+#addNewFire:hover {
+    transform: scale(0.97);
+    box-shadow: 0px 0px 4px #ffffff;
+
+}
+
+.sectionNewFire{
+    margin: 20px auto 2px auto;
+}
+
+#cerrarModal{
+    font-size: 19px;
+    font-weight: bolder;
+    border: 2px solid rgb(168, 168, 168);
+    width: auto;
+    height: 40px;
+    border-radius: 5px;
+    margin: 15px 0px 0px 0px;
+    transition-duration: 800ms;
+}
+#cerrarModal:hover{
+    border: 2px solid rgba(126, 31, 19, 0.918);
+
+}

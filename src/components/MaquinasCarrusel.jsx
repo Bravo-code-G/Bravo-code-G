@@ -1,15 +1,51 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
-import '../assets/styles/components/Maquinas.scss';
-import MaquinasItem from './MaquinasItem.jsx'
+import React, { useState, useEffect } from 'react';
+// import { Link } from 'react-router-dom';
+import '../assets/styles/components/MaquinasCarrusel.scss';
+import MaquinasItem from './MaquinasItem';
+import FormAdd from './FormAdd';
+import { DataFiree, FireApp } from './firebase';
+import { obtenerDocumento, obtenerDocumentos } from './DatabaseFire';
+import { openModalToFire, closedModalToFire } from './FormAddd';
 
-const MaquinasCarrusel = () => (
+const MaquinasCarrusel = () => {
+//   obtenerDocumentos();
+  const [dataElementos, setDataElementos] = useState([]);
+  const obtenerDocumentosCarrusel = () => {
+    DataFiree.collection('BracoIndex').doc('team').collection('slk').doc('elementos')
+      .collection('elementos')
+      .onSnapshot((querySnapshot) => {
+        const docsElement = [];
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, ' => ', doc.data());
+          docsElement.push({ ...doc.data(), id: doc.id });
+        });
+        setDataElementos(docsElement);
+      });
+  };
+  useEffect(() => {
+    obtenerDocumentosCarrusel();
+  }, []);
+  return (
+    <div id='carruselmaquinasA'>
 
-<div id="carruselmaquinas">
-    <MaquinasItem/>
-</div>
+      {' '}
+      <button type='button' id='NuevoelementFire' data-open='modalNewElement' onClick={openModalToFire}>Nuevo elemento</button>
+      {' '}
 
-);
+      <div id='modalNewElement'>
+        {' '}
+        <div id='pantallaPosteriorElement' onClick={closedModalToFire} />
+        {' '}
+        <FormAdd />
+      </div>
+      <div id='carruselMaquinasFire'>
+        {
+          dataElementos.map((dElement) => (<MaquinasItem key={dElement.id} {...dElement} />))
+        }
+      </div>
+    </div>
+  );
+};
 
 export default MaquinasCarrusel;

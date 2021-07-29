@@ -1,13 +1,17 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import Home from '../containers/Home.jsx';
-import Layout from '../components/Layout.jsx';
-import NotFound from '../containers/NotFound.jsx';
+import Home from '../containers/Home';
+import Layout from '../components/Layout';
+import NotFound from '../containers/NotFound';
 import MaquinasCarrusel from '../components/MaquinasCarrusel';
-import User from '../components/User.jsx';
-import Especial from '../components/Especial.jsx';
+import User from '../components/User';
+import Especial from '../components/Especial';
+import FormAdd from '../components/FormAdd';
 import '../assets/styles/App.scss';
+// eslint-disable-next-line import/order
 import firebase from 'firebase/app';
+import { FireApp } from '../components/firebase';
 import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/database';
@@ -16,25 +20,19 @@ import { authStateListenerAcceso } from '../components/ListenerAuth';
 import { AuthContextProvider } from '../components/AuthContext';
 import GuardRoute from '../components/GuardRoute';
 import Root from '../components/Root';
+// Required for side-effects
+require('firebase/firestore');
 
-const FireApp = () => {
-  return firebase.initializeApp({
-    apiKey: 'AIzaSyAKDUovEMCj_2yDeWnlcam0rxnD4zMopvs',
-    // authDomain: "www.braco.space",
-    authDomain: 'bravo-react-0.firebaseapp.com',
-    projectId: 'bravo-react-0',
-    storageBucket: 'bravo-react-0.appspot.com',
-    messagingSenderId: '400531528348',
-    appId: '1:400531528348:web:0901490a4666e49f1feb59',
-    measurementId: 'G-W196JE55ZJ',
-  });
-};
 FireApp();
+
+// eslint-disable-next-line no-unused-vars
 document.addEventListener('DOMContentLoaded', (event) => {
+  // eslint-disable-next-line no-use-before-define
   googleSignInRedirectResult();
   authStateListenerAcceso((user) => {
     console.log(user);
   });
+
   console.log('activo');
 });
 
@@ -57,11 +55,15 @@ function googleSignInRedirectResult() {
       console.log(`user:${user.displayName}`);
     }).catch((error) => {
       // Handle Errors here.
+      // eslint-disable-next-line no-unused-vars
       const errorCode = error.code;
+      // eslint-disable-next-line no-unused-vars
       const errorMessage = error.message;
       // The email of the user's account used.
+      // eslint-disable-next-line no-unused-vars
       const { email } = error;
       // The firebase.auth.AuthCredential type that was used.
+      // eslint-disable-next-line no-unused-vars
       const { credential } = error;
       // ...
     });
@@ -74,7 +76,7 @@ const App = () => (
         <Root>
           <Switch>
             <GuardRoute type={'public' & 'private'} exact path='/' component={Home} />
-            <GuardRoute type='private' exact path='/MaquinasCarrusel' component={MaquinasCarrusel} />
+            <GuardRoute type='private' exact path='/Maquinas' component={MaquinasCarrusel} />
             <GuardRoute type='private' exact path='/User' component={User} />
             <GuardRoute type='private' exact path='/Especial' component={Especial} />
             <GuardRoute type='private' exact path='/Auth' component={Auth} />
