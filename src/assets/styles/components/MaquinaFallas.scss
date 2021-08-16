@@ -1,0 +1,49 @@
+@import '../Vars.scss';
+
+
+#MaquinaFallasP{
+    // background: $linear-Gradient-A;
+    // width: 245px;
+    // border: 5px solid rgba(1, 56, 73, 0.562);
+}
+
+.descripcionfallas{
+    padding: 9px;
+    border: 2px solid rgba(1, 56, 73, 0.856) ;
+    text-align: start;
+    border-radius: 5px;
+    // width: auto;
+    background: linear-gradient(70deg, rgba(1, 56, 73, 0.144),rgba(0, 88, 59, 0.13));
+
+}
+
+.MaquinaFallas{
+    width: 245px;
+    height: 70px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    font-family: $theme-font;
+    color: rgb(65, 27, 27);
+    font-weight: bold;
+    border: 2px solid rgba(1, 56, 73, 0.856) ;
+
+}
+.MaquinaFallas:hover{
+background-color: rgb(224, 223, 223);
+}
+
+.descrpcionFallaCerrar{
+    width: 4rem;
+    height: 1.5rem;
+    border-radius: 5px;
+    font-size: 19px;
+    font-weight: bolder;
+    border: 2px solid rgb(19, 208, 255);
+    border-radius: 10px;
+    margin: 15px 0px 0px 0px;
+    transition-duration: 800ms;
+}
+.descrpcionFallaCerrar:hover{
+    border: 2px solid rgba(126, 31, 19, 0.918);
+
+}

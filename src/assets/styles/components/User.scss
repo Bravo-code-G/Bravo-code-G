@@ -1,15 +1,18 @@
+@import '../Vars.scss';
+
 .userImg{
-    grid-area: userImg;
     width: 104px;
     height: 104px;
-    background-color: rgba(255, 251, 251, 0.432);
+    background: linear-gradient(70deg, rgba(1, 56, 73, 0.562), rgba(0, 88, 59, 0.562));
     border-radius: 15px;
-    margin-left: 10px;
+    border: 2px solid $master-color-BB;
+    margin: 10px;
+    display: grid;
+    place-content: center;
     align-self: center ;
     
 }
 .userImgA{
-    background-image: url("https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     background-size: cover ;
     object-fit: cover;
     border-radius: 15px;

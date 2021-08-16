@@ -31,7 +31,7 @@
     place-content: center;
     background-color: none;
     transition-duration: .5s;
-    z-index: 200;
+    z-index: 2;
     transform: translateY(-1000px);
     margin: 10px 0px 10px 0px;
 }
@@ -63,20 +63,26 @@
 
 #NuevoelementFire{
     position: fixed;
-    background-color: rgb(199, 220, 223);
+    // background-color: rgba(31, 82, 88, 0.562);
+    background: linear-gradient(70deg, rgba(1, 56, 73, 0.562), rgba(0, 88, 59, 0.562));
     width: 90px;
-    height: 90px;
+    height: 50px;
     right: 5px;
     outline: none;
-    border-radius: 100%;
+    border-radius: 10px;
+    color: rgb(243, 243, 243);
+    font-family: 'Roboto', sans-serif;
     border: none;
-    border-bottom: 3px solid rgb(6, 204, 253);
-    // border-left: 3px solid rgb(6, 204, 253) ;
-    z-index: 800;
-    transition-duration: 1s;
+    // box-shadow: 1px -1px 4px rgb(6, 195, 253);
+    border-top: 2px solid rgb(19, 208, 255);
+    border-right: 2px solid rgb(19, 208, 255) ;
+    border-bottom: 2px solid rgb(6, 253, 171);
+    border-left: 2px solid rgb(6, 253, 171) ;
+    z-index: 300;
+    transition-duration: .5s;
 }
 #NuevoelementFire:hover{
-    transform: scale(1.1);
-    // box-shadow: 1px 1px 8px rgb(0, 255, 234);
-    border: 3px solid rgb(6, 204, 253);
+    transform: scale(1.05);
+    transition-duration: .5s;
+    background-color: rgba(255, 255, 255, 0.082);
 }

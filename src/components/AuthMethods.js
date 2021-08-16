@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import 'firebase/auth';
 
 //////////////////////////////////////////////
@@ -15,7 +15,7 @@ const BorrarP = () => {
   });
 };
 
-const UsuarioP = () => {
+const informacionUserAuth = () => {
   const user = firebase.auth().currentUser;
   //////////////////////////////////////////////////////////
   //  obtener el usuario que accedió
@@ -57,9 +57,11 @@ const UsuarioP = () => {
     // The user's ID, unique to the Firebase project. Do NOT use
     // this value to authenticate with your backend server, if
     // you have one. Use User.getToken() instead.
-    const { uid } = user;
+    return user;
+  }else {
+    console.log('sin usuario')
   }
-  console.log(user);
+  // console.log(user);
   /////////////////////////////////////////////////////////////
   // Actualiza el perfil de un usuario
   /////////////////////////////////////////////////////////////
@@ -84,24 +86,25 @@ const UsuarioP = () => {
 //   // ...
 // });
 };
-
 const authStateListener = () => {
   // [START auth_state_listener]
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
-      const { uid } = user;
-      console.log(`uid:${uid}`);
+      const userInfo = user;
+      console.log(`Name:${userInfo.displayName}`);
+      // return userInfo;
       // ...
-    } else {
+    }else{
       console.log('No ahi usuario autenticado');
-      // User is signed out
-      // ...
+    // User is signed out
+    // ...
     }
+    
 
   });
   // [END auth_state_listener]
 };
 
-export { UsuarioP, authStateListener };
+export { informacionUserAuth, authStateListener};

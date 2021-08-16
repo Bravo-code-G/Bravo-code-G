@@ -196,7 +196,7 @@ const Auth = () => {
     <div id='Principal'>
       <h3 id='EncP'>Inicia sesión con alguna de las formas siguientes</h3>
       <div id='LoginWithtEmail'>
-        <h4 id='Enc'>Acceder con correo</h4>
+        <h4 id='Encs'>Acceder con correo</h4>
         <label htmlFor='email'>Correo electrónico</label>
         <input type='email' id='email' />
         <label htmlFor='password'>Contraseña</label>
@@ -210,7 +210,7 @@ const Auth = () => {
           <h4>Acceder con Google</h4>
         </button>
       </div>
-      <button id='cerrarModal' onClick={CerrarModal}>Cerrar</button>
+      <button id='cerrarModalAuth' onClick={CerrarModal}>Cerrar</button>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
-import firebase from 'firebase';
+// import firebase from 'firebase';
+// import firebase from 'firebase/app';
+
 import 'firebase/firestore';
 import { DataFiree } from './firebase';
 
@@ -106,6 +108,23 @@ const addOrEditElement = (objectx) => {
     });
 
   updateTimestamp(fireReferencia);
+
+};
+
+const addOrEditElementTEST = (objectx) => {
+  const fireReferencia = DataFiree.collection('BracoIndex').doc('team').collection('slk').doc('elementos')
+    .collection('elementos')
+    .doc(objectx.NombreDelElemento);
+
+  fireReferencia.update(objectx)
+    .then(() => {
+      console.log('Element added successfully');
+    })
+    .catch((error) => {
+      console.error('Error adding document: ', error);
+    });
+
+  // updateTimestamp(fireReferencia);
 
 };
 export { DatabaseNewFireElement, obtenerDocumento, addOrEditElement, obtenerDocumentos };

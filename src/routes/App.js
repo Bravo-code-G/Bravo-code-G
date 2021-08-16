@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Home from '../containers/Home';
@@ -7,21 +7,22 @@ import NotFound from '../containers/NotFound';
 import MaquinasCarrusel from '../components/MaquinasCarrusel';
 import User from '../components/User';
 import Especial from '../components/Especial';
-import FormAdd from '../components/FormAdd';
 import '../assets/styles/App.scss';
 // eslint-disable-next-line import/order
 import firebase from 'firebase/app';
 import { FireApp } from '../components/firebase';
 import 'firebase/auth';
-import 'firebase/firestore';
-import 'firebase/database';
+// import 'firebase/firestore';
+import { authStateListener, informacionUserAuth } from '../components/AuthMethods';
+// import 'firebase/database';
 import Auth from '../components/Auth';
 import { authStateListenerAcceso } from '../components/ListenerAuth';
 import { AuthContextProvider } from '../components/AuthContext';
 import GuardRoute from '../components/GuardRoute';
 import Root from '../components/Root';
+import MaquinaSelect from '../components/MaquinaSelect';
 // Required for side-effects
-require('firebase/firestore');
+// require('firebase/firestore');
 
 FireApp();
 
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // eslint-disable-next-line no-use-before-define
   googleSignInRedirectResult();
   authStateListenerAcceso((user) => {
-    console.log(user);
+    // console.log(user);
   });
 
   console.log('activo');
@@ -48,11 +49,11 @@ function googleSignInRedirectResult() {
         // This gives you a Google Access Token. You can use it to access the Google API.
         const token = credential.accessToken;
         // ...
-        console.log(`token:${token}`);
+        // console.log(`token:${token}`);
       }
       // The signed-in user info.
       const { user } = result;
-      console.log(`user:${user.displayName}`);
+      // console.log(`user:${user.displayName}`);
     }).catch((error) => {
       // Handle Errors here.
       // eslint-disable-next-line no-unused-vars
@@ -76,6 +77,7 @@ const App = () => (
         <Root>
           <Switch>
             <GuardRoute type={'public' & 'private'} exact path='/' component={Home} />
+            <GuardRoute type='private' exact path='/Maquinas/:idDeElement' component={MaquinaSelect} />
             <GuardRoute type='private' exact path='/Maquinas' component={MaquinasCarrusel} />
             <GuardRoute type='private' exact path='/User' component={User} />
             <GuardRoute type='private' exact path='/Especial' component={Especial} />

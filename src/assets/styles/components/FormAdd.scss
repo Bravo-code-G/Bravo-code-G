@@ -2,6 +2,7 @@
 #HeaderNewElement{
     // grid-area: pantallaa;
     overflow: hidden;
+    opacity: 100%;
     padding: 20px;
     min-height: 300px;
     min-width: 300px;
@@ -20,22 +21,6 @@
     place-self: center;
     transform: scale(.9);
 }
-// #First{
-//     overflow: hidden;
-//     padding: 20px;
-//     min-height: 300px;
-//     min-width: 365px;
-//     height: auto;
-//     width:365px;
-//     background-color: rgba(0, 0, 0, 0.856);
-//     border-radius: 7px;
-//     border: 1px solid rgb(19, 208, 255);
-//     display: grid;
-//     align-items: center;
-//     justify-items: center;
-//     margin: auto;
-//     place-self: center;
-// }
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap);
 
 #EncNewElement{
@@ -62,7 +47,8 @@
 #formNewElement {
     display: grid;
     gap: 5px;
-    background-color: rgb(58, 58, 58);
+    // background-color: rgb(58, 58, 58);
+    background: linear-gradient(70deg, rgba(1, 41, 53, 0.562), rgba(0, 53, 35, 0.562));
     padding: 20px;
     width:fit-content;
     max-width: 350px;
@@ -98,14 +84,44 @@
 #cerrarModal{
     font-size: 19px;
     font-weight: bolder;
-    border: 2px solid rgb(168, 168, 168);
+    border: 2px solid rgb(19, 208, 255);
     width: auto;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 15px 0px 0px 0px;
     transition-duration: 800ms;
 }
 #cerrarModal:hover{
     border: 2px solid rgba(126, 31, 19, 0.918);
 
+}
+
+#addDataNewElementTec{
+    visibility: hidden;
+    display: none;
+}
+.addDataTecNewElement{
+    width: 28px;
+    height: 28px;
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-content: center;
+    background: none;
+    border-radius: 100%;
+    color: rgb(19, 208, 255);
+    font-size: 24px;
+    font-weight: bold;
+    border: 1px solid rgb(19, 208, 255);
+    box-shadow: 0px 0px 2px rgb(19, 208, 255);
+    transition-duration: .3s;
+    margin: 5px;
+}
+.addDataTecNewElement:hover{
+    transform: rotate(30deg) scale(1.2);
+    box-shadow: 0px 0px 5px rgb(19, 208, 255);
+}
+.liNewFire{
+    border-radius: 5px;
 }

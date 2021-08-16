@@ -1,19 +1,4 @@
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  setTimeout(() => {
-    const desplegarA = document.getElementById('BoxPbaA');
-    desplegarA.style.cssText = 'visibility: hidden; display:none';
-    const desplegarB = document.getElementById('BoxPbaB');
-    desplegarB.style.cssText = 'visibility: hidden; display:none';
-
-    const desplegarC = document.getElementById('BoxPbaC');
-    desplegarC.style.cssText = 'visibility: hidden; display:none';
-
-    const desplegarD = document.getElementById('BoxPbaD');
-    desplegarD.style.cssText = 'visibility: hidden; display:none';
-  }, 500);
-});
-
 const ventanaA = () => {
   let estadoCss = 'hidden';
   const desplegar = document.getElementById('BoxPbaA');

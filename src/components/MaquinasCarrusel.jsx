@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import '../assets/styles/components/MaquinasCarrusel.scss';
 import MaquinasItem from './MaquinasItem';
 import FormAdd from './FormAdd';
+import MaquinaSelect from './MaquinaSelect';
 import { DataFiree, FireApp } from './firebase';
 import { obtenerDocumento, obtenerDocumentos } from './DatabaseFire';
 import { openModalToFire, closedModalToFire } from './FormAddd';
 
 const MaquinasCarrusel = () => {
 //   obtenerDocumentos();
+  const inputRef = useRef();
   const [dataElementos, setDataElementos] = useState([]);
   const obtenerDocumentosCarrusel = () => {
     DataFiree.collection('BracoIndex').doc('team').collection('slk').doc('elementos')
@@ -23,25 +26,38 @@ const MaquinasCarrusel = () => {
         setDataElementos(docsElement);
       });
   };
+  const enfoque = () => {
+    inputRef.current.focus();
+  };
+
+  const stepp = () => {
+    enfoque();
+    openModalToFire();
+  };
   useEffect(() => {
     obtenerDocumentosCarrusel();
+    enfoque();
   }, []);
   return (
     <div id='carruselmaquinasA'>
 
       {' '}
-      <button type='button' id='NuevoelementFire' data-open='modalNewElement' onClick={openModalToFire}>Nuevo elemento</button>
+      <button type='button' id='NuevoelementFire' data-open='modalNewElement' onClick={stepp}>Nuevo elemento</button>
       {' '}
 
       <div id='modalNewElement'>
         {' '}
-        <div id='pantallaPosteriorElement' onClick={closedModalToFire} />
+        <div ref={inputRef} id='pantallaPosteriorElement' onClick={closedModalToFire} />
         {' '}
         <FormAdd />
       </div>
       <div id='carruselMaquinasFire'>
         {
-          dataElementos.map((dElement) => (<MaquinasItem key={dElement.id} {...dElement} />))
+          dataElementos.map((dElement) => (
+            <Link key={dElement.id} to={`/Maquinas/${dElement.id}`}>
+              <MaquinasItem key={`${dElement.id}`} {...dElement} />
+            </Link>
+          ))
         }
       </div>
     </div>
