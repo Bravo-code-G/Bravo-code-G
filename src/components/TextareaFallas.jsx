@@ -16,16 +16,42 @@ const TextareaFallas = (props) => {
   //   };
   const initialStateValues = dataElementos;
   const [values, setValues] = useState(initialStateValues);
+  const [prueba, setprueba] = useState([]);
+  const obtenerFallasDeElement = () => {
+    DataFiree.collection('BracoIndex').doc('team').collection('slk').doc('elementos')
+      .collection('elementos')
+      .onSnapshot((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          if (doc.id === idDeElement) {
+            const tru = doc.data();
+            if (tru.hasOwnProperty('Fallas')) {
+              if (tru.Fallas.length > 0) {
+                setprueba(tru.Fallas);
+              } else {
+                setprueba([]);
+              }
+            } else {
+              setprueba([]);
+            }
+          }
+        });
+      });
+  };
+  // console.log(prueba);
+  // console.log(values);
+  // const te = dataFallas;
+  // const pte = te.push('test');
+  // console.log(te.map((pt) => pt));
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
-  const addOrEditElementTEST = () => {
+
+  const addOrEditElementTEST = (Fallas) => {
     const fireReferencia = DataFiree.collection('BracoIndex').doc('team').collection('slk').doc('elementos')
       .collection('elementos')
       .doc(idDeElement);
-    const vet = values;
-    fireReferencia.update(vet)
+    fireReferencia.update({ Fallas })
       .then(() => {
         p;
         console.log('Element added successfully');
@@ -37,10 +63,12 @@ const TextareaFallas = (props) => {
     // updateTimestamp(fireReferencia);
 
   };
+
   const handleSubmit = (e) => {
+    prueba.push(values);
     e.preventDefault();
     if (values.Fallas !== []) {
-      addOrEditElementTEST(values);
+      addOrEditElementTEST(prueba);
       // props.addElement(values);
       setValues({ ...initialStateValues });
     } else {
@@ -49,9 +77,14 @@ const TextareaFallas = (props) => {
     }
 
   };
+  useEffect(() => {
+    obtenerFallasDeElement();
+
+  }, []);
 
   return (
     <>
+      <input type='text' onChange={handleInputChange} name='nameFalla' placeholder='titulo de la falla' maxLength='100' />
       <textarea name='descripcion' id='agregarFalla' onChange={handleInputChange} placeholder='max caracteres 900' rows='10' cols='40' maxLength='900' />
 
       <button type='button' id='agregarFallaButton' onClick={handleSubmit}>Agregar</button>

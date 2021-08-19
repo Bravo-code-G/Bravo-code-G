@@ -58,7 +58,8 @@ const MaquinaSelect = () => {
     const desplegarD = document.getElementById('BoxPbaD');
     desplegarD.style.cssText = 'visibility: hidden; display:none';
   }, 1000);
-  console.log(dataElementos);
+  // console.log(dataFallas);
+  const ter = { ...dataFallas };
   // const initialStateValues = {
   //   NombreDelElemento: '',
   //   V: '',
@@ -206,7 +207,7 @@ const MaquinaSelect = () => {
               <button type='button' className='BotonAccion' onClick={ventanaC}><h3 className='TituloSubMenu'>Fallas</h3></button>
               <div id='BoxPbaC' className='Listado'>
                 <h3>Agregar nueva falla</h3>
-                <TextareaFallas datos={dataElementos} idDeElement={idDeElement} />
+                <TextareaFallas datos={dataElementos} dataF={ter} idDeElement={idDeElement} />
                 {/* <textarea name='descripcion' id='agregarFalla' value={values.Fallas}  placeholder='max caracteres 900' rows='10' cols='40' maxLength='900' /> */}
                 {/*
                 <button type='button' id='agregarFallaButton' onClick={handleSubmit}>Agregar</button>
