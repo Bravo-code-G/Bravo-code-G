@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Home from '../containers/Home';
 import Layout from '../components/Layout';
 import NotFound from '../containers/NotFound';
@@ -21,8 +23,6 @@ import { AuthContextProvider } from '../components/AuthContext';
 import GuardRoute from '../components/GuardRoute';
 import Root from '../components/Root';
 import MaquinaSelect from '../components/MaquinaSelect';
-// Required for side-effects
-// require('firebase/firestore');
 
 FireApp();
 

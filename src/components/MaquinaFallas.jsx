@@ -1,12 +1,13 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { DataFiree } from './firebase';
 import '../assets/styles/components/MaquinaFallas.scss';
+import { toast } from 'react-toastify';
 
 const MaquinaFallas = (props) => {
-  const {nameFalla, descripcion} = props
+  const {nameFalla, descripcion, id, idDeElement} = props
 
   const mostrarFalla = () => {
-    let descripcionFalla = document.getElementById(nameFalla.toString())
+    let descripcionFalla = document.getElementById(id)
     // descripcionFalla.style.cssText = 'visibility: visible; display: grid;'
     const ter = descripcionFalla.style.visibility;
     if( ter === 'hidden' ){
@@ -15,17 +16,35 @@ const MaquinaFallas = (props) => {
       descripcionFalla.style.cssText = 'visibility: hidden; display:none;'
     }
   }
+  const onDeleteLink = () => {
+    const fireReferencia = DataFiree.collection('BracoIndex').doc('team').collection('slk').doc('elementos')
+    .collection('elementos')
+    .doc(idDeElement)
+    .collection('Fallas').doc(id);
+    if(window.confirm('Deceas borrar esta Falla')){
+     fireReferencia.delete(id)
+     toast('Eliminado',{
+       type: 'deleted',
+       autoClose: 2000,
+     })
+    }
+  }
+
   setTimeout(() => {
-  const primert = document.getElementById(nameFalla.toString())
+  const primert = document.getElementById(id)
   primert.style.cssText = 'visibility: hidden; display:none;'
   },1000)
   
   return (
     <div id='MaquinaFallasP'>
-      <button type className='MaquinaFallas' onClick={mostrarFalla}>
+      <div>
+         <button type className='MaquinaFallas' onClick={mostrarFalla}>
         <h3>{nameFalla}</h3>
       </button>
-      <div id={nameFalla.toString()} className='descripcionfallas'>
+      <button onClick={onDeleteLink}>borrar</button>
+      </div>
+     
+      <div id={id} className='descripcionfallas'>
       <h5>{descripcion}</h5> 
       <button type className='descrpcionFallaCerrar' onClick={mostrarFalla}>Cerrar</button>
       </div>

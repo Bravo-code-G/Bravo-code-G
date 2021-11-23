@@ -4,7 +4,6 @@ const LiveReloadPlugin = require('webpack-livereload-plugin');
 const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
-
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -53,7 +52,12 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
+      },
     ],
+
   },
   devServer: {
     open: true,

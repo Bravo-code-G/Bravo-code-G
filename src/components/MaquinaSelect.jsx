@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../assets/styles/components/MaquinasSelect.scss';
-import { array, objectOf, string } from 'prop-types';
+// import { array, objectOf, string } from 'prop-types';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import EditIcon from '@material-ui/icons/Edit';
 import { DataFiree, FireApp } from './firebase';
 import { ventanaA, ventanaB, ventanaC, ventanaD } from './MaquinaSelectt';
 import { getLinks, onDeleteLink, obtenerDocumentos, addOrEditElement, DatabaseNewFireElement, obtenerDocumento } from './DatabaseFire';
 import MaquinaFallas from './MaquinaFallas';
 import TextareaFallas from './TextareaFallas';
+import MaSeEditInfo from './MaSeEditInfo';
 
 const MaquinaSelect = () => {
   const { idDeElement } = useParams();
@@ -31,21 +35,24 @@ const MaquinaSelect = () => {
       .onSnapshot((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           if (doc.id === idDeElement) {
-            const tru = doc.data();
-            if (tru.hasOwnProperty('Fallas')) {
-              if (tru.Fallas.length > 0) {
-                setDataFallas(tru.Fallas);
-              } else {
-                setDataFallas([]);
-              }
-            } else {
-              setDataFallas([]);
-            }
-          }
+            const tru = doc.id;
+            DataFiree.collection('BracoIndex').doc('team').collection('slk').doc('elementos')
+              .collection('elementos')
+              .doc(tru)
+              .collection('Fallas')
+              .onSnapshot((querySnapshot) => {
+                const docsElement = [];
+                querySnapshot.forEach((doc) => {
+                // doc.data() is never undefined for query doc snapshots
+                  console.log(doc.id, ' => ', doc.data());
+                  docsElement.push({ ...doc.data(), id: doc.id });
+                });
+                setDataFallas(docsElement);
+              });
+          };
         });
       });
   };
-
   setTimeout(() => {
     const desplegarA = document.getElementById('BoxPbaA');
     desplegarA.style.cssText = 'visibility: hidden; display:none';
@@ -58,7 +65,7 @@ const MaquinaSelect = () => {
     const desplegarD = document.getElementById('BoxPbaD');
     desplegarD.style.cssText = 'visibility: hidden; display:none';
   }, 1000);
-  // console.log(dataFallas);
+  console.log(dataFallas);
   const ter = { ...dataFallas };
   // const initialStateValues = {
   //   NombreDelElemento: '',
@@ -95,6 +102,7 @@ const MaquinaSelect = () => {
     // updateTimestamp(fireReferencia);
 
   };
+  const dataElementoss = dataElementos;
   const handleSubmit = (e) => {
     e.preventDefault();
     if (values.NombreDelElemento !== '') {
@@ -144,43 +152,14 @@ const MaquinaSelect = () => {
                   </p>
                 </h3>
               </button>
-              <ul id='BoxPbaA' className='Listado'>
-                <li>
-                  <p className='pMaquinaSelect'>
-                    {`V: ${dataElementos.V}`}
-
-                  </p>
-
-                </li>
-                <li>
-                  <p className='pMaquinaSelect'>
-                    {`Hz: ${dataElementos.Hz}`}
-                  </p>
-
-                </li>
-                <li>
-                  <p className='pMaquinaSelect'>
-                    {`A: ${dataElementos.A}`}
-                  </p>
-
-                </li>
-                <li>
-                  <p className='pMaquinaSelect'>
-                    {`Presion hidraulica: ${dataElementos.PresionHidraulica}`}
-                  </p>
-
-                </li>
-                <li>
-                  <p className='pMaquinaSelect'>
-                    {`Presion Neumatica: ${dataElementos.PresionNeumatica}`}
-                  </p>
-
-                </li>
-              </ul>
+              <div id='BoxPbaA' className='BoxListadoMaSe'>
+                <MaSeEditInfo {...{ dataElementos }} />
+                {/* <i id='EditIconMaSe'><EditIcon fontSize='small' /></i> */}
+              </div>
             </div>
             <div>
               <button className='BotonAccion' onClick={ventanaB}><h3 className='TituloSubMenu'>Productos </h3></button>
-              <ul id='BoxPbaB' className='Listado'>
+              <ul id='BoxPbaB' className='BoxListadoMaSe'>
                 <li>
                   205846
                   {}
@@ -205,7 +184,7 @@ const MaquinaSelect = () => {
             </div>
             <div>
               <button type='button' className='BotonAccion' onClick={ventanaC}><h3 className='TituloSubMenu'>Fallas</h3></button>
-              <div id='BoxPbaC' className='Listado'>
+              <div id='BoxPbaC' className='BoxListadoMaSe'>
                 <h3>Agregar nueva falla</h3>
                 <TextareaFallas datos={dataElementos} dataF={ter} idDeElement={idDeElement} />
                 {/* <textarea name='descripcion' id='agregarFalla' value={values.Fallas}  placeholder='max caracteres 900' rows='10' cols='40' maxLength='900' /> */}
@@ -217,14 +196,14 @@ const MaquinaSelect = () => {
                 }
 
                 {dataFallas.length > 0 && (dataFallas.map((dElement) => (
-                  <MaquinaFallas {...dElement} />
+                  <MaquinaFallas {...dElement} idDeElement={idDeElement} />
                 )))}
               </div>
 
             </div>
             <div>
               <button className='BotonAccion' onClick={ventanaD}><h3 className='TituloSubMenu'>Piezas </h3></button>
-              <ul id='BoxPbaD' className='Listado'>
+              <ul id='BoxPbaD' className='BoxListadoMaSe'>
                 <li>
                   cilindro 2544
                   {}
@@ -244,6 +223,7 @@ const MaquinaSelect = () => {
 
         </div>
         <div id='BackImg'> </div>
+        <ToastContainer />
       </div>
 
     </>

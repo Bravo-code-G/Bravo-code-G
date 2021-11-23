@@ -54,7 +54,7 @@ const MaquinasCarrusel = () => {
       <div id='carruselMaquinasFire'>
         {
           dataElementos.map((dElement) => (
-            <Link key={dElement.id} to={`/Maquinas/${dElement.id}`}>
+            <Link key={dElement.id} to={`/Maquinas/${dElement.NombreDelElemento}`}>
               <MaquinasItem key={`${dElement.id}`} {...dElement} />
             </Link>
           ))
