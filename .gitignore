@@ -9,6 +9,7 @@ var.env
 .env
 
 Pruebas-D
+jdk-18.0.2.1/
 
 # Logs
 logs
@@ -83,3 +84,6 @@ typings/
 yarn-error.log
 
 # Build
+
+openjdk-18.0.2.1_linux-x64_bin.tar.gz
+openjdk-18.0.2.1_linux-x64_bin.tar.gz:Zone.Identifier

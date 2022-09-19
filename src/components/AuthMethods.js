@@ -52,7 +52,8 @@ const informacionUserAuth = () => {
     const { email } = user;
     const { photoURL } = user;
     const { emailVerified } = user;
-    console.log(displayName, email, photoURL, emailVerified);
+    const uidFBraco = user.uid;
+    console.log(displayName, email, photoURL, emailVerified, uidFBraco);
 
     // The user's ID, unique to the Firebase project. Do NOT use
     // this value to authenticate with your backend server, if
